@@ -64,7 +64,7 @@ Buscar apenas um usuário
 #### Route
 
 ```
-{{ _.baseUrl }}/user/{id}
+{{ _.baseUrl }}/users/{id}
 ```
 
 #### Params
@@ -134,11 +134,11 @@ Criar usuário.
 	"name": "Pierre Oliveira",
 	"job": "Programador",
 	"permission": "admin",
-	"countAccess": 0
+	"accessCount": 0
 }
 ```
 
-### PATCH /users
+### PATCH /users/{id}
 
 Atualizar usuário.
 
@@ -151,7 +151,7 @@ Atualizar usuário.
 #### Route
 
 ```
-{{ _.baseUrl }}/users
+{{ _.baseUrl }}/users/{id}
 ```
 
 #### Body
