@@ -14,7 +14,7 @@ routes.get('/users/:id', teste1.getUser);
 routes.get('/users', teste1.getUsers);
 routes.post('/users', teste2);
 routes.delete('/users/:id', checkToken, teste3);
-routes.patch('/users', checkToken, teste4);
+routes.patch('/users/:id', checkToken, teste4);
 routes.get('/users/access/:id', teste5);
 routes.post('/auth', auth);
 
