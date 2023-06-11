@@ -80,7 +80,10 @@ async function createUser(req, res) {
 
 		data.push(newUser);
 
-		return res.status(201).send(newUser);
+		return res.status(201).send({
+			...newUser,
+			password: undefined,
+		});
 	} catch (error) {
 		if (error instanceof zod.ZodError) {
 			return res.status(400).send({

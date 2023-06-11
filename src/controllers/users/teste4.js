@@ -77,7 +77,10 @@ async function updateUser(req, res) {
 
 		data[data.indexOf(user)] = updatedUser;
 
-		return res.send(updatedUser);
+		return res.send({
+			...updatedUser,
+			password: undefined,
+		});
 	} catch (error) {
 		if (error instanceof zod.ZodError) {
 			return res.status(400).send({
