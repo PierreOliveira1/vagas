@@ -75,6 +75,7 @@ async function createUser(req, res) {
 			name,
 			job,
 			permission,
+			accessCount: 0,
 			password: hash,
 		};
 

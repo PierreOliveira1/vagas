@@ -1,9 +1,15 @@
 const data = require('../../database');
 
 const getUser = (req, res) => {
-	const name = decodeURIComponent(req.query.name).toLowerCase();
+	const id = Number(req.params.id);
 
-	const user = data.find((user) => user.name.toLowerCase() === name);
+	if (!Number.isInteger(id)) {
+		return res.status(400).send({
+			message: 'Id deve ser um número inteiro',
+		});
+	}
+
+	const user = data.find((user) => user.id === id);
 
 	if (!user) {
 		return res.status(404).send({

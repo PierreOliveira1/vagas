@@ -10,12 +10,12 @@ const { checkToken } = require('../middlewares/checkToken');
 
 const routes = Router();
 
-routes.get('/user', teste1.getUser);
+routes.get('/users/:id', teste1.getUser);
 routes.get('/users', teste1.getUsers);
 routes.post('/users', teste2);
-routes.delete('/users', checkToken, teste3);
+routes.delete('/users/:id', checkToken, teste3);
 routes.patch('/users', checkToken, teste4);
-routes.get('/users/access', teste5);
+routes.get('/users/access/:id', teste5);
 routes.post('/auth', auth);
 
 module.exports = routes;
