@@ -13,11 +13,19 @@ const getUser = (req, res) => {
 
 	data[data.indexOf(user)].accessCount += 1;
 
-	return res.status(200).send(user);
+	return res.status(200).send({
+		...user,
+		password: undefined,
+	});
 };
 
-const getUsers = (req, res, next) => {
-	res.send(data);
+const getUsers = (req, res) => {
+	const newData = data.map((user) => ({
+		...user,
+		password: undefined,
+	}));
+
+	return res.status(200).send(newData);
 };
 
 module.exports = {
